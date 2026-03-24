@@ -65,6 +65,13 @@ The `ml-102/` directory contains advanced mathematics topics:
   - Trigonometric derivatives (sin(x), cos(x))
   - Fundamental differentiation rules (sum, product, constant multiple, chain rule)
 
+- [**math_002_numeric_derivatives_using_numpy.ipynb**](ml-102/math_002_numeric_derivatives_using_numpy.ipynb) - Numerical derivatives using NumPy, covering:
+  - Finite difference methods (forward, backward, central)
+  - Implementing numerical derivatives with NumPy
+  - Comparing numerical vs analytical derivatives
+  - Effect of step size on accuracy
+  - NumPy's built-in gradient() function
+
 ## Getting Started
 
 ### Prerequisites
