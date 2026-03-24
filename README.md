@@ -72,6 +72,15 @@ The `ml-102/` directory contains advanced mathematics topics:
   - Effect of step size on accuracy
   - NumPy's built-in gradient() function
 
+- [**math_003_automatic_derivative_using_jax.ipynb**](ml-102/math_003_automatic_derivative_using_jax.ipynb) - Automatic differentiation using JAX, covering:
+  - Introduction to automatic differentiation (AD)
+  - Forward and reverse mode AD
+  - JAX's grad() for computing gradients
+  - Higher-order derivatives
+  - Vectorized automatic differentiation
+  - Machine learning applications (gradient descent)
+  - Comparison of all three approaches (symbolic, numerical, automatic)
+
 ## Getting Started
 
 ### Prerequisites
