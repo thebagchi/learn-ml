@@ -4,3 +4,5 @@ matplotlib
 opencv-python
 ipykernel
 jupyter
+sympy
+jax
