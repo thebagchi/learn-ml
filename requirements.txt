@@ -6,3 +6,4 @@ ipykernel
 jupyter
 sympy
 jax
+torch

@@ -81,6 +81,16 @@ The `ml-102/` directory contains advanced mathematics topics:
   - Machine learning applications (gradient descent)
   - Comparison of all three approaches (symbolic, numerical, automatic)
 
+- [**math_004_automatic_derivatives_using_torch.ipynb**](ml-102/math_004_automatic_derivatives_using_torch.ipynb) - Automatic differentiation using PyTorch, covering:
+  - PyTorch's autograd system
+  - Computational graphs and backpropagation
+  - Computing gradients with .backward()
+  - Higher-order derivatives
+  - Vectorized gradient computation
+  - Gradient descent optimization
+  - Machine learning examples
+  - Performance comparison (PyTorch vs JAX vs SymPy vs Numerical)
+
 ## Getting Started
 
 ### Prerequisites
