@@ -94,8 +94,47 @@ The `ml-102/` directory contains advanced mathematics topics:
 - [**math_005_partial_derivatives_using_sympy.ipynb**](ml-102/math_005_partial_derivatives_using_sympy.ipynb) - Partial derivatives using SymPy, covering:
   - Understanding partial derivatives symbolically
   - Computing partial derivatives with respect to multiple variables
-  - Applications in multivariable calculus
-  - Examples with various functions
+  - Evaluating partial derivatives at specific points using `.subs()`
+  - The gradient vector and its geometric meaning
+  - 3D surface and contour plot visualization
+  - Higher-order and mixed partial derivatives (Hessian matrix)
+  - Complex example combining product rule and chain rule ($x \cdot e^y + \sin(xy)$)
+
+### Loss Functions
+
+- [**math_006_squared_loss.ipynb**](ml-102/math_006_squared_loss.ipynb) - Mean Squared Error (MSE) Loss, covering:
+  - Squared loss fundamentals and applications
+  - Calculation for single and multiple predictions
+  - Visualization of loss behavior
+  - Comparison with other loss functions
+  - Implementation with NumPy, JAX, PyTorch, and SymPy
+
+- [**math_007_log_loss.ipynb**](ml-102/math_007_log_loss.ipynb) - Log Loss (Cross-Entropy Loss), covering:
+  - Binary and multi-class classification
+  - Mathematical foundations and properties
+  - Single and multiple predictions
+  - Visualization of log loss behavior
+  - Implementation with NumPy, PyTorch, and SymPy
+  - When to use log loss vs other loss functions
+  - Real-world classification examples
+
+### Gradient Descent
+
+- [**math_008_gradient_descent_single_variable.ipynb**](ml-102/math_008_gradient_descent_single_variable.ipynb) - Gradient descent for a single variable, covering:
+  - Minimizing $f(x) = e^x - \log(x)$ using gradient descent
+  - The update rule: $x_{n+1} = x_n - \alpha \cdot f'(x_n)$
+  - Effect of different learning rates on convergence
+  - Effect of iteration count on accuracy
+  - Visualization of optimization paths and convergence
+  - Different starting points converging to the same minimum
+
+- [**math_009_gradient_descent_linear_regression.ipynb**](ml-102/math_009_gradient_descent_linear_regression.ipynb) - Gradient descent for linear regression, covering:
+  - Fitting a line by minimizing Mean Squared Error (MSE)
+  - Computing gradients of MSE with respect to slope and intercept
+  - Effect of learning rates on convergence of both parameters
+  - Visualization of fitted lines, loss, slope, and intercept convergence
+  - Comparison with the analytical solution (Normal Equations)
+  - Effect of iteration count on convergence
 
 ## Getting Started
 

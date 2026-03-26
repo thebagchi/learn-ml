@@ -7,3 +7,4 @@ jupyter
 sympy
 jax
 torch
+pandas
