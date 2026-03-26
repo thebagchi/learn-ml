@@ -91,6 +91,12 @@ The `ml-102/` directory contains advanced mathematics topics:
   - Machine learning examples
   - Performance comparison (PyTorch vs JAX vs SymPy vs Numerical)
 
+- [**math_005_partial_derivatives_using_sympy.ipynb**](ml-102/math_005_partial_derivatives_using_sympy.ipynb) - Partial derivatives using SymPy, covering:
+  - Understanding partial derivatives symbolically
+  - Computing partial derivatives with respect to multiple variables
+  - Applications in multivariable calculus
+  - Examples with various functions
+
 ## Getting Started
 
 ### Prerequisites
