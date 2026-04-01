@@ -1,6 +1,7 @@
 numpy
 notebook
 matplotlib
+matplotlib-venn
 opencv-python
 ipykernel
 jupyter
