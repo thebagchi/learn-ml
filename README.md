@@ -4,7 +4,7 @@ A comprehensive learning resource for machine learning fundamentals, built on ma
 
 ## About
 
-This repository contains interactive Jupyter notebooks covering essential mathematics concepts and ML algorithms, progressing from basic linear algebra to principal component analysis (PCA).
+This repository contains interactive Jupyter notebooks covering essential mathematics concepts and ML algorithms, progressing from basic linear algebra through calculus and automatic differentiation to combinatorics and probability.
 
 ## 📚 ML-101 Curriculum
 
@@ -136,6 +136,72 @@ The `ml-102/` directory contains advanced mathematics topics:
   - Comparison with the analytical solution (Normal Equations)
   - Effect of iteration count on convergence
 
+### Neural Networks
+
+- [**math_010_neural_network_single_perceptron_single_input.ipynb**](ml-102/math_010_neural_network_single_perceptron_single_input.ipynb) - Single perceptron with single input, covering:
+  - Perceptron architecture and computation
+  - Weights, bias, and activation functions
+  - Forward pass and basic neural computation
+  - Interactive visualization of perceptron behavior
+  - Foundation for understanding neural networks
+
+- [**math_011_neural_network_single_perceptron_multiple_input.ipynb**](ml-102/math_011_neural_network_single_perceptron_multiple_input.ipynb) - Single perceptron with multiple inputs, covering:
+  - Multi-dimensional input handling
+  - Dot product in neural computation
+  - Decision boundaries in higher dimensions
+  - Generalization to multiple features
+  - Visualization of linear separability
+
+- [**math_012_sigmoid_function.ipynb**](ml-102/math_012_sigmoid_function.ipynb) - Sigmoid activation function, covering:
+  - Sigmoid function properties and applications
+  - Smooth probability mapping (0 to 1)
+  - Advantages over step functions
+  - Derivatives and backpropagation implications
+  - Integration with neural networks
+
+## 📚 ML-103 Curriculum
+
+The `ml-103/` directory covers combinatorics and discrete mathematics fundamentals:
+
+### Counting Principles
+
+- [**math_001_counting.ipynb**](ml-103/math_001_counting.ipynb) - Fundamental counting principles, covering:
+  - Basic counting rules and techniques
+  - Multiplication principle and addition principle
+  - Sample spaces and event counting
+  - Real-world applications in probability
+  - Foundation for combinatorial analysis
+
+### Permutations
+
+- [**math_002_permutations.ipynb**](ml-103/math_002_permutations.ipynb) - Permutations and arrangements, covering:
+  - Ordered arrangements of elements
+  - Factorial notation and calculations
+  - Permutations with and without repetition
+  - Applications to real-world problems
+  - Interactive visualizations and computational methods
+
+### Combinations
+
+- [**math_003_combinations.ipynb**](ml-103/math_003_combinations.ipynb) - Combinations and selection, covering:
+  - Unordered selection of elements
+  - Binomial coefficients and Pascal's triangle
+  - Combination formulas and properties
+  - Classic problems: lottery, poker hands, committee selection
+  - Visual demonstrations of symmetry and identities
+  - Comparison with permutations
+  - **Enhanced visualizations**: 3-panel layouts with intuitive graphics showing distributions, example cases, and mathematical formulas
+
+### Stars and Bars Method
+
+- [**math_004_stars_bars.ipynb**](ml-103/math_004_stars_bars.ipynb) - Distribution counting with stars and bars, covering:
+  - Distributing identical items into distinct bins
+  - Non-negative and positive integer solutions
+  - Constraint transformation techniques
+  - Inclusion-exclusion principle applications
+  - Practical problems: sticker distribution, integer solutions, bagel selection
+  - **Improved visualizations**: 3-panel layouts with colored boxes showing distributions, step-by-step explanations, and clear calculations for 6 practice problems
+
 ## Getting Started
 
 ### Prerequisites
@@ -165,7 +231,26 @@ The `ml-102/` directory contains advanced mathematics topics:
 
 ## Learning Path
 
-We recommend following the notebooks in numerical order (math_001 → math_012) to build a solid understanding of the mathematical foundations needed for machine learning.
+### Recommended Sequence
+
+1. **Start with ML-101** (Linear Algebra Fundamentals)
+   - Begin with math_001 and progress through all 12 notebooks
+   - Covers arrays, matrices, transformations, eigenvalues, and PCA
+   - Foundation for understanding data structures in ML
+
+2. **Continue with ML-102** (Calculus & Neural Networks)
+   - Master derivatives, automatic differentiation, and optimization
+   - Understand loss functions and gradient descent
+   - Learn the basics of perceptrons and neural network fundamentals
+   - Compare symbolic, numerical, and automatic differentiation approaches
+
+3. **Conclude with ML-103** (Combinatorics & Probability)
+   - Build intuition for counting, distributions, and discrete mathematics
+   - Master permutations, combinations, and stars-and-bars method
+   - Understand constraints and transformations in counting problems
+   - Essential background for probability theory and statistical inference
+
+Each notebook builds on previous concepts, with progressive difficulty and increasingly practical applications. Interactive visualizations help solidify understanding of abstract mathematical concepts.
 
 ## License
 
