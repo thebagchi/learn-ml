@@ -45,6 +45,7 @@ from __future__ import annotations
 
 import os
 import sys
+from enum import Enum
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.colors import to_rgba
@@ -54,17 +55,104 @@ import ply.yacc as yacc
 
 
 # ---------------------------------------------------------------------------
-# Mermaid-inspired palette & typography
+# Material Design color schemes
+# Each scheme defines: circles (up to 3), background, outline,
+#                       label color, sub-text color
+# Reference: https://m3.material.io/styles/color/static/baseline
 # ---------------------------------------------------------------------------
-_MERMAID_COLORS = ["#6366f1", "#f59e0b", "#10b981"]  # indigo, amber, emerald
-_BG_FILL = "#f8fafc"       # very light slate for sample-space background
-_BG_STROKE = "#94a3b8"     # muted slate border
-_LABEL_COLOR = "#1e293b"   # dark slate for labels
-_SUB_COLOR = "#475569"     # medium slate for text nodes
+
+class Color(Enum):
+    """Material Design color schemes for Venn diagrams.
+
+    Usage:
+        from libs.venn import venn, Color
+        venn(diagram_string, color_scheme=Color.OCEAN)
+    """
+    # ── Material Design 3 baseline ────────────────────────────────────────
+    BASELINE = {
+        "circles": ["#6750A4", "#625B71", "#7D5260"],   # primary, secondary, tertiary
+        "bg_fill": "#FFFBFE",   "bg_stroke": "#79747E",  # surface, outline
+        "label": "#1C1B1F",     "sub": "#49454F",        # on-surface, on-surface-variant
+    }
+
+    # ── Cool tones ────────────────────────────────────────────────────────
+    OCEAN = {
+        "circles": ["#1565C0", "#00838F", "#2E7D32"],   # blue 800, cyan 800, green 800
+        "bg_fill": "#E3F2FD",   "bg_stroke": "#90CAF9",  # blue 50, blue 200
+        "label": "#0D47A1",     "sub": "#1565C0",        # blue 900, blue 800
+    }
+    INDIGO = {
+        "circles": ["#283593", "#1565C0", "#00695C"],   # indigo 800, blue 800, teal 800
+        "bg_fill": "#E8EAF6",   "bg_stroke": "#9FA8DA",  # indigo 50, indigo 200
+        "label": "#1A237E",     "sub": "#283593",        # indigo 900, indigo 800
+    }
+    TEAL = {
+        "circles": ["#00695C", "#00838F", "#2E7D32"],   # teal 800, cyan 800, green 800
+        "bg_fill": "#E0F2F1",   "bg_stroke": "#80CBC4",  # teal 50, teal 200
+        "label": "#004D40",     "sub": "#00695C",        # teal 900, teal 800
+    }
+
+    # ── Warm tones ────────────────────────────────────────────────────────
+    SUNSET = {
+        "circles": ["#E65100", "#F9A825", "#AD1457"],   # orange 900, yellow 800, pink 800
+        "bg_fill": "#FFF3E0",   "bg_stroke": "#FFCC80",  # orange 50, orange 200
+        "label": "#BF360C",     "sub": "#E65100",        # deep-orange 900, orange 900
+    }
+    ROSE = {
+        "circles": ["#AD1457", "#6A1B9A", "#C62828"],   # pink 800, purple 800, red 800
+        "bg_fill": "#FCE4EC",   "bg_stroke": "#F48FB1",  # pink 50, pink 200
+        "label": "#880E4F",     "sub": "#AD1457",        # pink 900, pink 800
+    }
+    EARTH = {
+        "circles": ["#4E342E", "#33691E", "#E65100"],   # brown 800, l-green 900, orange 900
+        "bg_fill": "#EFEBE9",   "bg_stroke": "#BCAAA4",  # brown 50, brown 200
+        "label": "#3E2723",     "sub": "#4E342E",        # brown 900, brown 800
+    }
+
+    # ── Neutral / high-contrast ───────────────────────────────────────────
+    SLATE = {
+        "circles": ["#37474F", "#546E7A", "#78909C"],   # blue-grey 800/600/400
+        "bg_fill": "#ECEFF1",   "bg_stroke": "#B0BEC5",  # blue-grey 50, blue-grey 200
+        "label": "#263238",     "sub": "#37474F",        # blue-grey 900, blue-grey 800
+    }
+    MONOCHROME = {
+        "circles": ["#212121", "#616161", "#9E9E9E"],   # grey 900/700/500
+        "bg_fill": "#FAFAFA",   "bg_stroke": "#BDBDBD",  # grey 50, grey 400
+        "label": "#212121",     "sub": "#424242",        # grey 900, grey 800
+    }
+
+    # ── Vibrant / presentation ────────────────────────────────────────────
+    VIBRANT = {
+        "circles": ["#D32F2F", "#1976D2", "#388E3C"],   # red 700, blue 700, green 700
+        "bg_fill": "#FFFFFF",   "bg_stroke": "#BDBDBD",  # white, grey 400
+        "label": "#212121",     "sub": "#616161",        # grey 900, grey 700
+    }
+    PASTEL = {
+        "circles": ["#EF9A9A", "#90CAF9", "#A5D6A7"],   # red 200, blue 200, green 200
+        "bg_fill": "#FFFFFF",   "bg_stroke": "#E0E0E0",  # white, grey 300
+        "label": "#424242",     "sub": "#757575",        # grey 800, grey 600
+    }
+    NEON = {
+        "circles": ["#AA00FF", "#00BFA5", "#FFD600"],   # purple A700, teal A700, yellow A700
+        "bg_fill": "#F3E5F5",   "bg_stroke": "#CE93D8",  # purple 50, purple 200
+        "label": "#4A148C",     "sub": "#6A1B9A",        # purple 900, purple 800
+    }
+
+
+# ---------------------------------------------------------------------------
+# Active palette defaults (BASELINE)
+# ---------------------------------------------------------------------------
+_DEFAULT_SCHEME = Color.BASELINE
+_d = _DEFAULT_SCHEME.value
+_CIRCLE_COLORS = _d["circles"]
+_BG_FILL = _d["bg_fill"]
+_BG_STROKE = _d["bg_stroke"]
+_LABEL_COLOR = _d["label"]
+_SUB_COLOR = _d["sub"]
 _FONT_FAMILY = "sans-serif"
-_CIRCLE_ALPHA = 0.55       # fill opacity that lets overlap blend nicely
-_CIRCLE_STROKE = "#ffffff"  # white ring around each circle (Mermaid style)
-_CIRCLE_LW = 2.5           # circle stroke width
+_CIRCLE_ALPHA = 0.55
+_CIRCLE_STROKE = "#FFFFFF"
+_CIRCLE_LW = 2.5
 
 
 def _style_val(styles, sid, prop, default):
@@ -108,16 +196,20 @@ def _put_sub(ax, x, y, text, fontsize=9, color=_SUB_COLOR):
     )
 
 
-def _draw_sample_space(ax, xlim, ylim, title):
+def _draw_sample_space(ax, xlim, ylim, title, *, bg_fill=None,
+                       bg_stroke=None, label_color=None):
     """Draw the outer 'S' sample-space rounded rectangle."""
+    bg_fill = bg_fill or _BG_FILL
+    bg_stroke = bg_stroke or _BG_STROKE
+    label_color = label_color or _LABEL_COLOR
     x0, x1 = xlim
     y0, y1 = ylim
     w, h = x1 - x0, y1 - y0
     rect = patches.FancyBboxPatch(
         (x0, y0), w, h,
         boxstyle="round,pad=0.06",
-        facecolor=_BG_FILL,
-        edgecolor=_BG_STROKE,
+        facecolor=bg_fill,
+        edgecolor=bg_stroke,
         linewidth=1.8,
         zorder=0,
     )
@@ -125,7 +217,7 @@ def _draw_sample_space(ax, xlim, ylim, title):
     ax.text(
         x0 + 0.08, y1 - 0.12, "S",
         fontsize=14, fontweight="bold",
-        color=_BG_STROKE, fontfamily=_FONT_FAMILY,
+        color=bg_stroke, fontfamily=_FONT_FAMILY,
         zorder=1,
     )
     pad = 0.15
@@ -135,7 +227,7 @@ def _draw_sample_space(ax, xlim, ylim, title):
     if title:
         ax.set_title(
             title, fontsize=13, fontweight="semibold",
-            color=_LABEL_COLOR, fontfamily=_FONT_FAMILY,
+            color=label_color, fontfamily=_FONT_FAMILY,
             pad=12,
         )
     ax.axis("off")
@@ -630,12 +722,27 @@ def _parse(diagram: str):
 # Public API
 # ---------------------------------------------------------------------------
 
-def venn(diagram):
-    """Parse and render a Mermaid venn-beta diagram with matplotlib."""
+def venn(diagram, color_scheme: Color | None = None):
+    """Parse and render a Mermaid venn-beta diagram with matplotlib.
+
+    Args:
+        diagram: Mermaid venn-beta syntax string.
+        color_scheme: Optional ``Color`` enum member to override the default
+            Material Design palette.  Per-set ``style`` directives in the
+            diagram still take precedence.
+    """
     title, sets, set_order, unions, styles = _parse(diagram)
     n = len(set_order)
     if n < 2 or n > 3:
         raise ValueError(f"venn() supports 2-3 sets, got {n}")
+
+    # Resolve palette
+    cs = (color_scheme or _DEFAULT_SCHEME).value
+    circle_colors = cs["circles"]
+    bg_fill = cs["bg_fill"]
+    bg_stroke = cs["bg_stroke"]
+    label_color = cs["label"]
+    sub_color = cs["sub"]
 
     fig, ax = plt.subplots(figsize=(9, 5.5))
     fig.patch.set_facecolor("white")
@@ -647,14 +754,14 @@ def venn(diagram):
         return None
 
     def _circ(sid, idx, center, radius):
-        fill = _style_val(styles, sid, "fill", _MERMAID_COLORS[idx % 3])
+        fill = _style_val(styles, sid, "fill", circle_colors[idx % len(circle_colors)])
         opacity = float(_style_val(styles, sid, "fill-opacity", str(_CIRCLE_ALPHA)))
         stroke = _style_val(styles, sid, "stroke", _CIRCLE_STROKE)
         lw = float(_style_val(styles, sid, "stroke-width", str(_CIRCLE_LW)))
         _draw_circle(ax, center, radius, fill, opacity, stroke, lw)
 
     def _color(sid):
-        return _style_val(styles, sid, "color", _LABEL_COLOR)
+        return _style_val(styles, sid, "color", label_color)
 
     # ── 2-set layout ──────────────────────────────────────────────────────
     if n == 2:
@@ -674,28 +781,30 @@ def venn(diagram):
             _put_label(ax, xa - r * 0.42, 0.08, sets[a]["label"], color=_color(a))
             _put_label(ax, xb + r * 0.42, 0.08, sets[b]["label"], color=_color(b))
             if u["label"]:
-                _put_label(ax, 0, 0.08, u["label"], fontsize=10, color=_LABEL_COLOR)
+                _put_label(ax, 0, 0.08, u["label"], fontsize=10, color=label_color)
             # text nodes
             for i, t in enumerate(sets[a]["texts"]):
-                _put_sub(ax, xa - r * 0.42, -0.14 - i * 0.20, t)
+                _put_sub(ax, xa - r * 0.42, -0.14 - i * 0.20, t, color=sub_color)
             for i, t in enumerate(sets[b]["texts"]):
-                _put_sub(ax, xb + r * 0.42, -0.14 - i * 0.20, t)
+                _put_sub(ax, xb + r * 0.42, -0.14 - i * 0.20, t, color=sub_color)
             for i, t in enumerate(u["texts"]):
-                _put_sub(ax, 0, -0.14 - i * 0.20, t)
+                _put_sub(ax, 0, -0.14 - i * 0.20, t, color=sub_color)
         else:
             _put_label(ax, xa, 0.08, sets[a]["label"], color=_color(a))
             _put_label(ax, xb, 0.08, sets[b]["label"], color=_color(b))
             for i, t in enumerate(sets[a]["texts"]):
-                _put_sub(ax, xa, -0.14 - i * 0.20, t)
+                _put_sub(ax, xa, -0.14 - i * 0.20, t, color=sub_color)
             for i, t in enumerate(sets[b]["texts"]):
-                _put_sub(ax, xb, -0.14 - i * 0.20, t)
+                _put_sub(ax, xb, -0.14 - i * 0.20, t, color=sub_color)
 
         margin = 0.45
         box_x0 = min(xa - r, xb - r) - margin
         box_x1 = max(xa + r, xb + r) + margin
         box_y0 = -r - margin
         box_y1 = r + margin
-        _draw_sample_space(ax, (box_x0, box_x1), (box_y0, box_y1), title)
+        _draw_sample_space(ax, (box_x0, box_x1), (box_y0, box_y1), title,
+                           bg_fill=bg_fill, bg_stroke=bg_stroke,
+                           label_color=label_color)
 
     # ── 3-set layout ──────────────────────────────────────────────────────
     elif n == 3:
@@ -709,7 +818,7 @@ def venn(diagram):
             ly = positions[i][1] + label_offsets[i][1]
             _put_label(ax, lx, ly, sets[sid]["label"], color=_color(sid))
             for j, t in enumerate(sets[sid]["texts"]):
-                _put_sub(ax, lx, ly - 0.20 * (j + 1), t)
+                _put_sub(ax, lx, ly - 0.20 * (j + 1), t, color=sub_color)
 
         for uid, uinfo in unions.items():
             parts = uid.split(",")
@@ -717,9 +826,9 @@ def venn(diagram):
             mx = sum(positions[i][0] for i in idxs) / len(idxs)
             my = sum(positions[i][1] for i in idxs) / len(idxs)
             if uinfo["label"]:
-                _put_label(ax, mx, my, uinfo["label"], fontsize=10)
+                _put_label(ax, mx, my, uinfo["label"], fontsize=10, color=label_color)
             for j, t in enumerate(uinfo["texts"]):
-                _put_sub(ax, mx, my - 0.20 * (j + 1), t)
+                _put_sub(ax, mx, my - 0.20 * (j + 1), t, color=sub_color)
 
         margin = 0.50
         all_x = [p[0] for p in positions]
@@ -728,7 +837,9 @@ def venn(diagram):
         box_x1 = max(all_x) + r + margin
         box_y0 = min(all_y) - r - margin
         box_y1 = max(all_y) + r + margin
-        _draw_sample_space(ax, (box_x0, box_x1), (box_y0, box_y1), title)
+        _draw_sample_space(ax, (box_x0, box_x1), (box_y0, box_y1), title,
+                           bg_fill=bg_fill, bg_stroke=bg_stroke,
+                           label_color=label_color)
 
     plt.tight_layout()
     plt.show()
