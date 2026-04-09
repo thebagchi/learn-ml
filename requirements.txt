@@ -2,6 +2,7 @@ numpy
 notebook
 matplotlib
 matplotlib-venn
+ply
 opencv-python
 ipykernel
 jupyter
