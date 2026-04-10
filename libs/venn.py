@@ -722,7 +722,7 @@ def _parse(diagram: str):
 # Public API
 # ---------------------------------------------------------------------------
 
-def venn(diagram, color_scheme: Color | None = None):
+def venn(diagram, color_scheme: Color | None = None, figsize: tuple[float, float] | None = None):
     """Parse and render a Mermaid venn-beta diagram with matplotlib.
 
     Args:
@@ -730,6 +730,8 @@ def venn(diagram, color_scheme: Color | None = None):
         color_scheme: Optional ``Color`` enum member to override the default
             Material Design palette.  Per-set ``style`` directives in the
             diagram still take precedence.
+        figsize: Optional ``(width, height)`` tuple in inches for the figure.
+            Defaults to ``(9, 5.5)``.
     """
     title, sets, set_order, unions, styles = _parse(diagram)
     n = len(set_order)
@@ -744,7 +746,7 @@ def venn(diagram, color_scheme: Color | None = None):
     label_color = cs["label"]
     sub_color = cs["sub"]
 
-    fig, ax = plt.subplots(figsize=(9, 5.5))
+    fig, ax = plt.subplots(figsize=figsize or (9, 5.5))
     fig.patch.set_facecolor("white")
 
     def _find_union(*sids):
