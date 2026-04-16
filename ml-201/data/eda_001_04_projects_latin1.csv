@@ -1,0 +1,51 @@
+project_id,project_name,category,budget_eur,description
+1,Café Expansion,Ökonomie,80693,Développement d'applications
+2,Résumé Builder,Ökonomie,38879,Ämter und Behörden Lösung
+3,Naïve Bayes App,Educación,50597,Análisis de données
+4,Über Analytics,Ökonomie,40132,Prüfung der Qualität
+5,São Paulo Hub,Científico,4626,Réseau neuronal profond
+6,Zürich Lab,Négociation,86936,Développement d'applications
+7,El Niño Tracker,Négociation,82515,Ämter und Behörden Lösung
+8,Señor Dashboard,Négociation,78065,Análisis de données
+9,Möbius Strip Viz,Négociation,56390,Prüfung der Qualität
+10,Crème Brûlée AI,Educación,17645,Réseau neuronal profond
+11,Café Expansion,Ökonomie,92960,Développement d'applications
+12,Résumé Builder,Négociation,55144,Ämter und Behörden Lösung
+13,Naïve Bayes App,Tecnología,14382,Análisis de données
+14,Über Analytics,Négociation,5025,Prüfung der Qualität
+15,São Paulo Hub,Ökonomie,44226,Réseau neuronal profond
+16,Zürich Lab,Négociation,80380,Développement d'applications
+17,El Niño Tracker,Educación,70711,Ämter und Behörden Lösung
+18,Señor Dashboard,Científico,97055,Análisis de données
+19,Möbius Strip Viz,Científico,75710,Prüfung der Qualität
+20,Crème Brûlée AI,Ökonomie,4443,Réseau neuronal profond
+21,Café Expansion,Científico,22395,Développement d'applications
+22,Résumé Builder,Científico,11725,Ämter und Behörden Lösung
+23,Naïve Bayes App,Tecnología,34461,Análisis de données
+24,Über Analytics,Ökonomie,42115,Prüfung der Qualität
+25,São Paulo Hub,Ökonomie,97887,Réseau neuronal profond
+26,Zürich Lab,Científico,84732,Développement d'applications
+27,El Niño Tracker,Científico,80790,Ämter und Behörden Lösung
+28,Señor Dashboard,Científico,80557,Análisis de données
+29,Möbius Strip Viz,Educación,72260,Prüfung der Qualität
+30,Crème Brûlée AI,Négociation,29690,Réseau neuronal profond
+31,Café Expansion,Educación,2407,Développement d'applications
+32,Résumé Builder,Ökonomie,74568,Ämter und Behörden Lösung
+33,Naïve Bayes App,Tecnología,59560,Análisis de données
+34,Über Analytics,Négociation,48340,Prüfung der Qualität
+35,São Paulo Hub,Tecnología,18794,Réseau neuronal profond
+36,Zürich Lab,Ökonomie,20881,Développement d'applications
+37,El Niño Tracker,Ökonomie,87292,Ämter und Behörden Lösung
+38,Señor Dashboard,Tecnología,95952,Análisis de données
+39,Möbius Strip Viz,Tecnología,50703,Prüfung der Qualität
+40,Crème Brûlée AI,Tecnología,45354,Réseau neuronal profond
+41,Café Expansion,Ökonomie,92288,Développement d'applications
+42,Résumé Builder,Científico,79462,Ämter und Behörden Lösung
+43,Naïve Bayes App,Tecnología,15390,Análisis de données
+44,Über Analytics,Négociation,88475,Prüfung der Qualität
+45,São Paulo Hub,Ökonomie,28307,Réseau neuronal profond
+46,Zürich Lab,Educación,97364,Développement d'applications
+47,El Niño Tracker,Educación,95049,Ämter und Behörden Lösung
+48,Señor Dashboard,Négociation,25502,Análisis de données
+49,Möbius Strip Viz,Científico,96599,Prüfung der Qualität
+50,Crème Brûlée AI,Tecnología,23486,Réseau neuronal profond

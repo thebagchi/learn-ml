@@ -1,0 +1,201 @@
+researcher_id,name,country,city,university,field,publications
+1,Researcher_1,Paksitan,MUMBAI,Univ of Dhaka,computer science,47
+2,Researcher_2,Sri  Lanka,Mumbay,university of colombo,Math,0
+3,Researcher_3,bangladesh,Mumbai,university of dhaka,Phys,2
+4,Researcher_4,sri lanka,Lahore,University of Colombo,mathematics,25
+5,Researcher_5,INDIA,KARACHI,Univ. of Punjab,Physics,17
+6,Researcher_6,sri lanka,DHAKA,University of Punjab,computer science,8
+7,Researcher_7,pakistan,Mumbay,university of colombo,computer science,37
+8,Researcher_8,Sri  Lanka,LAHORE,Univ. of Colombo,Math,22
+9,Researcher_9,Sri  Lanka,LAHORE,Univ. of Colombo,Computer Science,20
+10,Researcher_10,India,Lahor,university of dhaka,Mathematics,0
+11,Researcher_11, India ,mumbai,University of Dhaka,CS,20
+12,Researcher_12, India ,karachi,iit bombay,CS,26
+13,Researcher_13,Srilanka,Colmbo,University of Colombo,computer science,41
+14,Researcher_14,INDIA,Mumbai,University of Dhaka,Phys,5
+15,Researcher_15,sri lanka,Mumbai,University of Colombo,computer science,43
+16,Researcher_16,Bangaldesh,COLOMBO,IIT Bombay,Physics,35
+17,Researcher_17,pakistan,lahore,Univ of Dhaka,Math,27
+18,Researcher_18, Pakistan,LAHORE,university of colombo,Math,44
+19,Researcher_19,Sri  Lanka,KARACHI,University of Colombo,Phys,16
+20,Researcher_20,sri lanka,mumbai,university of punjab,Physics,39
+21,Researcher_21,Pakstan,Mumbay,Univ of Dhaka,Mathematics,2
+22,Researcher_22,India,karachi,Univ of Dhaka,Computer Science,11
+23,Researcher_23,SRI LANKA,Mumbay,iit bombay,Physics,38
+24,Researcher_24,India,lahore,university of colombo,physics,11
+25,Researcher_25,sri lanka,Karachi,University of Punjab,mathematics,1
+26,Researcher_26,India,Karaci,University of Dhaka,computer science,45
+27,Researcher_27, Pakistan,COLOMBO,University of Colombo,physics,21
+28,Researcher_28,india,lahore,University of Colombo,Phys,22
+29,Researcher_29,bangladesh,Colombo,IIT Bombay,physics,29
+30,Researcher_30, Pakistan,DHAKA,Univ of Dhaka,Math,4
+31,Researcher_31,Paksitan,MUMBAI,IIT  Bombay,Computer Science,8
+32,Researcher_32,Pakstan,karachi,Univ. of Punjab,CS,20
+33,Researcher_33,Bangladesh,karachi,IIT  Bombay,computer science,10
+34,Researcher_34, Pakistan,Dahka,University of Colombo,CS,4
+35,Researcher_35,INDIA,Mumbay,IIT  Bombay,Math,34
+36,Researcher_36, Pakistan,mumbai,iit bombay,Math,26
+37,Researcher_37,Sri  Lanka,Karachi,university of punjab,computer science,48
+38,Researcher_38,BANGLADESH,Dhaka,University of Colombo,CS,1
+39,Researcher_39,Pakstan,Karachi,University of Colombo,Physics,23
+40,Researcher_40,SRI LANKA,Karachi,university of punjab,Math,30
+41,Researcher_41, India ,lahore,University of Dhaka,CS,32
+42,Researcher_42,Sri  Lanka,COLOMBO,university of punjab,Mathematics,38
+43,Researcher_43,Bangladesh,dhaka,Univ. of Colombo,CS,29
+44,Researcher_44,SRI LANKA,Dahka,IIT  Bombay,Mathematics,45
+45,Researcher_45,sri lanka,KARACHI,iit bombay,Mathematics,36
+46,Researcher_46,Inda,Lahor,IIT Bombay,Math,27
+47,Researcher_47,PAKISTAN,Dahka,University of Dhaka,computer science,30
+48,Researcher_48,sri lanka,COLOMBO,university of dhaka,Phys,10
+49,Researcher_49,Pakistan,Lahore,IIT Bombay,Math,22
+50,Researcher_50,Bangaldesh,Colombo,University of Punjab,computer science,1
+51,Researcher_51,INDIA,dhaka,University of Punjab,computer science,39
+52,Researcher_52,Bangaldesh,Lahor,University of Punjab,physics,40
+53,Researcher_53,PAKISTAN,karachi,university of colombo,mathematics,26
+54,Researcher_54,Sri  Lanka,Colombo,University of Punjab,Math,34
+55,Researcher_55,bangladesh,Karachi,iit bombay,computer science,1
+56,Researcher_56,Bangladesh,Colmbo,IIT Bombay,physics,38
+57,Researcher_57,Srilanka,Lahor,Univ of Dhaka,Mathematics,36
+58,Researcher_58,Pakistan,colombo,Univ. of Punjab,Phys,20
+59,Researcher_59,sri lanka,Mumbai,University of Dhaka,Phys,4
+60,Researcher_60,bangladesh,dhaka,university of colombo,Mathematics,44
+61,Researcher_61,Pakistan,Mumbai,university of dhaka,CS,20
+62,Researcher_62, India ,DHAKA,IIT  Bombay,CS,28
+63,Researcher_63,Bangaldesh,MUMBAI,Univ. of Colombo,Math,19
+64,Researcher_64,India,Colombo,University of Colombo,mathematics,37
+65,Researcher_65,SRI LANKA,Lahore,University of Punjab,physics,19
+66,Researcher_66,Sri Lanka,DHAKA,university of dhaka,Phys,49
+67,Researcher_67,BANGLADESH,Karachi,University of Colombo,Computer Science,24
+68,Researcher_68,SRI LANKA,LAHORE,Univ. of Punjab,Computer Science,1
+69,Researcher_69,India,lahore,university of dhaka,Physics,31
+70,Researcher_70,sri lanka,lahore,Univ. of Colombo,computer science,25
+71,Researcher_71,SRI LANKA,Mumbay,IIT Bombay,Mathematics,5
+72,Researcher_72,Bangladesh,Karaci,university of dhaka,computer science,40
+73,Researcher_73,india,DHAKA,university of colombo,computer science,2
+74,Researcher_74,pakistan,Lahor,University of Punjab,physics,32
+75,Researcher_75,India,Colmbo,Univ. of Punjab,Physics,0
+76,Researcher_76, Pakistan,karachi,IIT  Bombay,mathematics,4
+77,Researcher_77,SRI LANKA,Mumbay,Univ of Dhaka,Physics,12
+78,Researcher_78,Paksitan,COLOMBO,university of punjab,Phys,18
+79,Researcher_79,INDIA,Mumbay,university of colombo,physics,11
+80,Researcher_80,INDIA,karachi,University of Punjab,computer science,47
+81,Researcher_81,BANGLADESH,Mumbai,University of Colombo,mathematics,24
+82,Researcher_82,india,dhaka,Univ. of Punjab,computer science,34
+83,Researcher_83,Sri  Lanka,Colmbo,IIT Bombay,Math,11
+84,Researcher_84,PAKISTAN,Karachi,university of colombo,Math,29
+85,Researcher_85,SRI LANKA,Lahor,iit bombay,CS,4
+86,Researcher_86,Pakstan,lahore,Univ. of Punjab,Physics,33
+87,Researcher_87,BANGLADESH,Colmbo,University of Colombo,mathematics,21
+88,Researcher_88, Pakistan,dhaka,university of colombo,Math,38
+89,Researcher_89,India,DHAKA,university of punjab,CS,12
+90,Researcher_90,Srilanka,colombo,university of punjab,physics,46
+91,Researcher_91,Bangladesh,Karaci,University of Dhaka,mathematics,2
+92,Researcher_92,pakistan,colombo,Univ of Dhaka,CS,19
+93,Researcher_93,Inda,karachi,University of Colombo,Mathematics,30
+94,Researcher_94,BANGLADESH, Lahore,university of punjab,mathematics,4
+95,Researcher_95,Sri Lanka,LAHORE,University of Dhaka,CS,23
+96,Researcher_96,Srilanka,COLOMBO,University of Dhaka,computer science,39
+97,Researcher_97,Paksitan,mumbai,university of colombo,Mathematics,32
+98,Researcher_98, Pakistan,Lahore,University of Dhaka,Math,7
+99,Researcher_99,Bangaldesh,Karachi,Univ. of Punjab,Computer Science,23
+100,Researcher_100,Pakistan,mumbai,Univ. of Colombo,CS,49
+101,Researcher_101,India,Lahore,University of Dhaka,physics,19
+102,Researcher_102,Bangladesh,Colmbo,University of Punjab,CS,15
+103,Researcher_103, India ,karachi,University of Colombo,Computer Science,49
+104,Researcher_104,Pakstan,Karachi,University of Punjab,Mathematics,11
+105,Researcher_105,Bangladesh,Dhaka,iit bombay,Mathematics,12
+106,Researcher_106,SRI LANKA,lahore,university of punjab,mathematics,44
+107,Researcher_107, India , Lahore,Univ of Dhaka,physics,41
+108,Researcher_108,Paksitan,mumbai,University of Dhaka,physics,38
+109,Researcher_109,Bangladesh,dhaka,IIT Bombay,physics,24
+110,Researcher_110,India,Colombo,IIT Bombay,Computer Science,45
+111,Researcher_111,SRI LANKA,Lahore,university of punjab,physics,31
+112,Researcher_112,pakistan,LAHORE,iit bombay,Phys,23
+113,Researcher_113, India ,LAHORE,IIT Bombay,Computer Science,47
+114,Researcher_114,Bangaldesh,karachi,Univ. of Colombo,Mathematics,46
+115,Researcher_115,Bangladesh,Lahore,University of Punjab,Computer Science,43
+116,Researcher_116,sri lanka,mumbai,Univ. of Colombo,computer science,8
+117,Researcher_117, Pakistan,Karachi,university of dhaka,computer science,39
+118,Researcher_118,India,COLOMBO,Univ. of Punjab,physics,49
+119,Researcher_119,INDIA,LAHORE,IIT  Bombay,Mathematics,22
+120,Researcher_120,Sri  Lanka,colombo,IIT Bombay,Computer Science,49
+121,Researcher_121,India,lahore,Univ of Dhaka,Computer Science,12
+122,Researcher_122,pakistan,Colombo,University of Dhaka,Computer Science,31
+123,Researcher_123,Paksitan,MUMBAI,Univ of Dhaka,Phys,49
+124,Researcher_124,SRI LANKA,Mumbai,University of Colombo,computer science,14
+125,Researcher_125,Paksitan,Lahor,Univ. of Punjab,Computer Science,35
+126,Researcher_126,bangladesh,Karaci,University of Punjab,Phys,48
+127,Researcher_127,Sri  Lanka,lahore,iit bombay,computer science,4
+128,Researcher_128,pakistan,lahore,Univ. of Punjab,Phys,21
+129,Researcher_129,Bangladesh,Karachi,IIT  Bombay,mathematics,15
+130,Researcher_130,Bangaldesh,Mumbai,university of dhaka,computer science,40
+131,Researcher_131,BANGLADESH,Colombo,university of colombo,Math,9
+132,Researcher_132,Paksitan,MUMBAI,IIT Bombay,mathematics,23
+133,Researcher_133,SRI LANKA, Lahore,iit bombay,Computer Science,17
+134,Researcher_134,Pakstan,Colmbo,iit bombay,Mathematics,48
+135,Researcher_135,SRI LANKA,Dahka,IIT Bombay,Phys,17
+136,Researcher_136,PAKISTAN,dhaka,IIT Bombay,Phys,6
+137,Researcher_137,PAKISTAN,Karachi,IIT Bombay,Phys,3
+138,Researcher_138, India ,DHAKA,IIT Bombay,Phys,25
+139,Researcher_139,Sri  Lanka,Dahka,IIT Bombay,Mathematics,4
+140,Researcher_140,PAKISTAN,LAHORE,iit bombay,CS,15
+141,Researcher_141,Bangladesh,Mumbai,university of punjab,Phys,34
+142,Researcher_142,Sri Lanka,Lahor,university of punjab,CS,25
+143,Researcher_143,sri lanka,Dhaka,Univ of Dhaka,Mathematics,17
+144,Researcher_144,India,Colmbo,university of punjab,Mathematics,28
+145,Researcher_145,bangladesh,Mumbay,IIT  Bombay,mathematics,22
+146,Researcher_146,pakistan,Karachi,university of punjab,computer science,13
+147,Researcher_147, Pakistan,MUMBAI,iit bombay,Math,14
+148,Researcher_148, India ,KARACHI,IIT Bombay,physics,48
+149,Researcher_149,India,Lahor,Univ. of Colombo,Math,32
+150,Researcher_150,sri lanka,dhaka,University of Dhaka,physics,24
+151,Researcher_151,Srilanka,DHAKA,University of Dhaka,Mathematics,20
+152,Researcher_152,Paksitan,Lahore,IIT  Bombay,Math,16
+153,Researcher_153,Sri  Lanka,DHAKA,University of Colombo,Physics,22
+154,Researcher_154,Pakstan,Lahor,iit bombay,computer science,42
+155,Researcher_155, India ,LAHORE,University of Punjab,Math,16
+156,Researcher_156,INDIA,COLOMBO,Univ. of Colombo,computer science,13
+157,Researcher_157,bangladesh,dhaka,Univ. of Punjab,CS,28
+158,Researcher_158,Sri  Lanka,Mumbay,Univ of Dhaka,computer science,19
+159,Researcher_159,Paksitan,DHAKA,University of Punjab,CS,29
+160,Researcher_160, Pakistan,mumbai,iit bombay,Phys,18
+161,Researcher_161,PAKISTAN,Colmbo,university of punjab,CS,38
+162,Researcher_162,PAKISTAN,lahore,IIT Bombay,mathematics,12
+163,Researcher_163, Pakistan,Karachi,university of colombo,Phys,17
+164,Researcher_164,Pakstan,Karachi,University of Punjab,Mathematics,22
+165,Researcher_165,india,Dhaka,Univ. of Punjab,Computer Science,45
+166,Researcher_166,Sri Lanka,mumbai,University of Colombo,CS,32
+167,Researcher_167,PAKISTAN,KARACHI,University of Dhaka,CS,38
+168,Researcher_168,Bangladesh,KARACHI,University of Colombo,computer science,39
+169,Researcher_169,india,Lahore,Univ. of Punjab,Mathematics,17
+170,Researcher_170,bangladesh,Colmbo,IIT Bombay,Math,8
+171,Researcher_171, Pakistan,karachi,university of punjab,Physics,32
+172,Researcher_172,BANGLADESH,Karachi,Univ. of Punjab,physics,31
+173,Researcher_173,BANGLADESH,Colmbo,Univ of Dhaka,CS,16
+174,Researcher_174,bangladesh,KARACHI,Univ. of Punjab,Math,18
+175,Researcher_175,Paksitan,colombo,university of colombo,Physics,26
+176,Researcher_176,sri lanka,Colmbo,iit bombay,physics,5
+177,Researcher_177, Pakistan,COLOMBO,university of punjab,Computer Science,34
+178,Researcher_178,india,KARACHI,IIT Bombay,computer science,36
+179,Researcher_179,sri lanka,Dhaka,Univ. of Colombo,Math,33
+180,Researcher_180,PAKISTAN,Colombo,University of Dhaka,computer science,19
+181,Researcher_181,sri lanka,DHAKA,University of Dhaka,physics,24
+182,Researcher_182,INDIA,Karaci,Univ. of Colombo,mathematics,3
+183,Researcher_183,pakistan,dhaka,Univ. of Punjab,CS,9
+184,Researcher_184,bangladesh,Mumbai,iit bombay,Phys,9
+185,Researcher_185,Srilanka,DHAKA,University of Punjab,Physics,23
+186,Researcher_186,pakistan, Lahore,University of Colombo,Mathematics,20
+187,Researcher_187,Srilanka,COLOMBO,University of Colombo,CS,10
+188,Researcher_188,Inda,Mumbay,University of Colombo,Phys,26
+189,Researcher_189,Bangaldesh,Lahor,university of colombo,Math,15
+190,Researcher_190,Inda,karachi,University of Punjab,Computer Science,25
+191,Researcher_191,PAKISTAN,Karaci,iit bombay,CS,29
+192,Researcher_192,PAKISTAN,KARACHI,University of Colombo,computer science,48
+193,Researcher_193,Bangladesh,DHAKA,Univ of Dhaka,mathematics,15
+194,Researcher_194,Pakstan,Karachi,University of Punjab,Mathematics,6
+195,Researcher_195,Srilanka,DHAKA,University of Punjab,computer science,15
+196,Researcher_196,India,Karachi,IIT Bombay,Phys,34
+197,Researcher_197,India,Dhaka,IIT Bombay,CS,15
+198,Researcher_198,bangladesh,Colmbo,university of punjab,mathematics,39
+199,Researcher_199,INDIA,Lahore,Univ of Dhaka,CS,11
+200,Researcher_200,bangladesh,Karaci,Univ of Dhaka,Math,34

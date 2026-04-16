@@ -10,3 +10,8 @@ sympy
 jax
 torch
 pandas
+seaborn
+scikit-learn
+chardet
+fuzzywuzzy
+python-Levenshtein
