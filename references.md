@@ -164,7 +164,38 @@ This file contains all URLs found in the repository (excluding virtual environme
 - https://stackoverflow.com/questions/tagged/matplotlib
 - https://yt-project.org/doc/index.html
 
-## Books and Articles
+## Youtube Playlists
+
+### Linear Algebra Resources
+
+**Prof. Gilbert Strang (MIT) - Linear Algebra Fundamentals**
+
+Everyone looking to gain deep understanding of linear algebra should refer to the playlist below with lecture videos from the linear algebra course taught at MIT. These videos are the best resources available for understanding the concepts in detail with clear intuition. Note that these videos are from a full semester course so it takes time to go through each of them and understand the concepts thoroughly.
+
+- 📺 **MIT Open Courseware - Linear Algebra Lecture Series**: https://www.youtube.com/playlist?list=PLE7DDD91010BC51F8
+  - Complete lecture series by Prof. Gilbert Strang
+  - Covers fundamentals to advanced topics
+  - Highly recommended for building strong mathematical intuition
+
+### Machine Learning and Advanced Topics
+
+- 📺 **Stanford CS229: Machine Learning Full Course**: https://www.youtube.com/playlist?list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU
+  - Taught by Prof. Andrew Ng (Autumn 2018)
+  - Comprehensive coverage of machine learning algorithms and theory
+  - Includes supervised learning, unsupervised learning, and deep learning
+  - Highly regarded course from one of ML's leading educators
+
+### Probability and Statistics
+
+- 📺 **Stanford CS109: Introduction to Probability for Computer Scientists**: https://www.youtube.com/playlist?list=PLoROMvodv4rOpr_A7B9SriE_iZmkanvUg
+  - Taught by Prof. Chris Piech (2022)
+  - Foundational probability theory for computer science applications
+  - Covers probability distributions, statistical inference, and practical applications
+  - Essential mathematical background for machine learning
+
+---
+
+### Other Books and Articles
 - http://jse.amstat.org/v19n3/decock.pdf
 - https://www.oreilly.com/library/view/feature-engineering-for/9781491953235/
 - https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/
@@ -205,6 +236,9 @@ This file contains all URLs found in the repository (excluding virtual environme
 - https://www.youtube.com/watch?v=FgakZw6K1QQ
 - https://www.youtube.com/watch?v=4b5d3muPQmA
 - https://docs.python.org/3/library/re.html
+
+## Stanford CS229 - Machine Learning
+- https://see.stanford.edu/Course/CS229
 
 ## Note
 This list is compiled from a search across the repository and may not be exhaustive due to search limitations. It excludes URLs from virtual environment files.
