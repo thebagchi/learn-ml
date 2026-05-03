@@ -383,31 +383,31 @@ DEPENDENCIES:
 	}
 
 	var (
-		rawURL    string
-		outputDir string
-		extList   string
-		keywords  string
-		delay     time.Duration
-		yes       bool
+		url      string
+		ouput    string
+		extns    string
+		keywords string
+		delay    time.Duration
+		yes      bool
 	)
 
-	flag.StringVar(&rawURL, "url", "", "URL of the page to scrape (required)")
-	flag.StringVar(&outputDir, "d", "downloads", "Output directory")
-	flag.StringVar(&outputDir, "dir", "downloads", "Output directory")
-	flag.StringVar(&extList, "ext", strings.Join(DefaultExtensions, ","), "Comma-separated file extensions")
+	flag.StringVar(&url, "url", "", "URL of the page to scrape (required)")
+	flag.StringVar(&ouput, "d", "downloads", "Output directory")
+	flag.StringVar(&ouput, "dir", "downloads", "Output directory")
+	flag.StringVar(&extns, "ext", strings.Join(DefaultExtensions, ","), "Comma-separated file extensions")
 	flag.StringVar(&keywords, "keywords", "", "Comma-separated URL keywords to match")
 	flag.DurationVar(&delay, "delay", 1*time.Second, "Delay between downloads")
 	flag.BoolVar(&yes, "y", false, "Skip confirmation prompt")
 	flag.Parse()
 
-	if rawURL == "" {
+	if url == "" {
 		fmt.Fprintln(os.Stderr, "Error: -url is required")
 		flag.Usage()
 		os.Exit(1)
 	}
 
 	// Parse extensions
-	exts := strings.Split(extList, ",")
+	exts := strings.Split(extns, ",")
 	for i, e := range exts {
 		exts[i] = strings.TrimSpace(e)
 	}
@@ -422,8 +422,8 @@ DEPENDENCIES:
 	}
 
 	cfg := Config{
-		URL:        rawURL,
-		OutputDir:  outputDir,
+		URL:        url,
+		OutputDir:  ouput,
 		Extensions: exts,
 		Keywords:   kws,
 		Delay:      delay,
