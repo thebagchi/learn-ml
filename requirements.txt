@@ -12,6 +12,7 @@ torch
 pandas
 seaborn
 scikit-learn
+statsmodels
 chardet
 fuzzywuzzy
 python-Levenshtein
