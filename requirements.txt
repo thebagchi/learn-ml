@@ -25,3 +25,7 @@ fuzzywuzzy
 python-Levenshtein
 kaggle
 ipython
+xgboost
+prophet
+umap-learn
+gymnasium
