@@ -11,12 +11,13 @@ jax
 
 # Ensure PyTorch CPU wheels are used (prevents CUDA driver mismatch freezes in VS Code).
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.11.0+cpu
+torch==2.12.0+cpu
 torchvision==0.27.0+cpu
 
 # Use CPU-only TensorFlow for notebook stability.
 tensorflow-cpu==2.21.0
 pandas
+scipy
 seaborn
 scikit-learn
 statsmodels
@@ -29,3 +30,12 @@ xgboost
 prophet
 umap-learn
 gymnasium
+nbformat
+nbconvert
+
+# Additional modeling / viz libraries used by ml-301 notebooks.
+lifelines
+pygam
+imbalanced-learn
+optuna
+plotly
