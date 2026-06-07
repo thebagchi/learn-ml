@@ -32,6 +32,7 @@ umap-learn
 gymnasium
 nbformat
 nbconvert
+jinja2>=3.1
 
 # Additional modeling / viz libraries used by ml-301 notebooks.
 lifelines

@@ -2,6 +2,7 @@
 """Run all Jupyter notebooks in a directory and its subdirectories."""
 
 import argparse
+import re
 import sys
 import time
 from pathlib import Path
@@ -10,18 +11,66 @@ import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor, CellExecutionError
 
 
-def run_notebook(notebook_path: Path, timeout: int, kernel: str) -> tuple[bool, str]:
+def strip_ansi(text: str) -> str:
+    return re.sub(r'\x1b\[[0-9;]*[a-zA-Z]', '', text)
+
+
+def format_error(e: CellExecutionError, verbose: bool) -> str:
+    """Format a CellExecutionError with full traceback details."""
+    lines = []
+    lines.append(f"  Error type : {e.ename}")
+    lines.append(f"  Error value: {e.evalue}")
+
+    # Parse cell source and traceback from e.traceback (the full error string)
+    raw = e.traceback or ""
+    sep = "------------------"
+    parts = raw.split(sep)
+    # parts[0] = "An error occurred...\n"
+    # parts[1] = "\n<cell source>\n"
+    # parts[2] = "\n\n<traceback>"
+
+    if len(parts) >= 3:
+        cell_src = parts[1].strip()
+        tb_raw = strip_ansi(sep.join(parts[2:])).strip()
+    else:
+        cell_src = ""
+        tb_raw = strip_ansi(raw).strip()
+
+    # Cell source
+    src_lines = cell_src.splitlines() if cell_src else []
+    if src_lines:
+        lines.append("  Failing cell source:")
+        if verbose or len(src_lines) <= 15:
+            shown = src_lines
+        else:
+            shown = src_lines[:15]
+            lines_after = len(src_lines) - 15
+        for ln in shown:
+            lines.append(f"    {ln}")
+        if not verbose and len(src_lines) > 15:
+            lines.append(f"    ... ({lines_after} more lines — run with --verbose to see all)")
+
+    # Full traceback
+    if tb_raw:
+        lines.append("  Traceback:")
+        for tl in tb_raw.splitlines():
+            lines.append(f"    {tl}")
+
+    return "\n".join(lines)
+
+
+def run_notebook(notebook_path: Path, timeout: int, kernel: str) -> tuple[bool, str, object, object]:
     with open(notebook_path) as f:
         nb = nbformat.read(f, as_version=4)
 
     ep = ExecutePreprocessor(timeout=timeout, kernel_name=kernel)
     try:
         ep.preprocess(nb, {"metadata": {"path": str(notebook_path.parent)}})
-        return True, ""
+        return True, "", None, nb
     except CellExecutionError as e:
-        return False, str(e)
+        return False, str(e), e, None
     except TimeoutError:
-        return False, f"Timed out after {timeout}s"
+        return False, f"Timed out after {timeout}s", None, None
 
 
 def find_notebooks(root: Path, pattern: str = "*.ipynb") -> list[Path]:
@@ -37,6 +86,7 @@ def main():
     parser.add_argument("--ignore", nargs="*", default=[], help="Substrings to skip in notebook paths")
     parser.add_argument("--stop-on-error", action="store_true", help="Stop after first failure")
     parser.add_argument("--inplace", action="store_true", help="Save executed output back to notebooks")
+    parser.add_argument("--verbose", "-v", action="store_true", help="Show full cell source and traceback on error")
     args = parser.parse_args()
 
     root = Path(args.directory).resolve()
@@ -62,22 +112,21 @@ def main():
         rel = nb_path.relative_to(root)
         print(f"Running {rel} ... ", end="", flush=True)
         start = time.monotonic()
-        ok, err = run_notebook(nb_path, args.timeout, args.kernel)
+        ok, err, exc, nb = run_notebook(nb_path, args.timeout, args.kernel)
         elapsed = time.monotonic() - start
 
         if ok:
             print(f"OK ({elapsed:.1f}s)")
             passed.append(rel)
             if args.inplace:
-                with open(nb_path) as f:
-                    nb = nbformat.read(f, as_version=4)
-                ep = ExecutePreprocessor(timeout=args.timeout, kernel_name=args.kernel)
-                ep.preprocess(nb, {"metadata": {"path": str(nb_path.parent)}})
                 with open(nb_path, "w") as f:
                     nbformat.write(nb, f)
         else:
             print(f"FAILED ({elapsed:.1f}s)")
-            print(f"  {err[:300]}")
+            if exc is not None:
+                print(format_error(exc, args.verbose))
+            else:
+                print(f"  {err}")
             failed.append(rel)
             if args.stop_on_error:
                 break
