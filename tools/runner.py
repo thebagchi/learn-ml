@@ -66,6 +66,13 @@ def run_notebook(notebook_path: Path, timeout: int, kernel: str) -> tuple[bool, 
     ep = ExecutePreprocessor(timeout=timeout, kernel_name=kernel)
     try:
         ep.preprocess(nb, {"metadata": {"path": str(notebook_path.parent)}})
+        # Stamp kernelspec so VS Code recognises the kernel on open
+        nb.metadata.setdefault("kernelspec", {}).update({
+            "display_name": f"Python 3 ({kernel})",
+            "language": "python",
+            "name": kernel,
+        })
+        nb.metadata.setdefault("language_info", {}).setdefault("name", "python")
         return True, "", None, nb
     except CellExecutionError as e:
         return False, str(e), e, None
