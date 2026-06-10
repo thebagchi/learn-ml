@@ -239,6 +239,7 @@ Everyone looking to gain deep understanding of linear algebra should refer to th
 
 ## Stanford CS229 - Machine Learning
 - https://see.stanford.edu/Course/CS229
+- https://cs229.stanford.edu/main_notes.pdf
 
 ## Note
 This list is compiled from a search across the repository and may not be exhaustive due to search limitations. It excludes URLs from virtual environment files.
