@@ -25,6 +25,8 @@ This file contains all URLs found in the repository (excluding virtual environme
 - https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
 - https://www.kaggle.com/datasets/hassan06/nslkdd
 - https://www.kaggle.com/datasets/galaxyh/kdd-cup-1999-data
+- https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data
+- https://www.kaggle.com/datasets/uciml/iris
 
 ## Seaborn Documentation
 - https://seaborn.pydata.org/generated/seaborn.scatterplot.html

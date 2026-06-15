@@ -122,6 +122,7 @@ venv/
 cython_debug/
 # Downloaded course materials (can be re-downloaded)
 cs229_materials/
+cs230_materials/
 cs246_materials/
 cs345a_materials/
 ml-001/data/
